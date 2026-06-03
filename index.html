@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow - Real-Time Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-cloud-sun"></i> WeatherNow</h1>
+                <p>Real-Time Weather Forecast</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search for a city..."
+                        class="search-input"
+                    >
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button id="locationBtn" class="location-btn">
+                    <i class="fas fa-map-marker-alt"></i> Use My Location
+                </button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Current Weather Section -->
+            <section id="currentWeather" class="current-weather hidden">
+                <div class="weather-card">
+                    <div class="location-info">
+                        <h2 id="cityName"></h2>
+                        <p id="currentDate"></p>
+                    </div>
+                    <div class="weather-main">
+                        <div class="weather-icon-container">
+                            <img id="weatherIcon" src="" alt="Weather Icon" class="weather-icon">
+                        </div>
+                        <div class="weather-details">
+                            <div class="temperature">
+                                <span id="temperature"></span>
+                            </div>
+                            <p id="weatherDescription" class="weather-desc"></p>
+                        </div>
+                    </div>
+                    <div class="weather-info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-droplets"></i>
+                            <div>
+                                <p class="label">Humidity</p>
+                                <p id="humidity" class="value"></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <p class="label">Wind Speed</p>
+                                <p id="windSpeed" class="value"></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <p class="label">Visibility</p>
+                                <p id="visibility" class="value"></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-compress"></i>
+                            <div>
+                                <p class="label">Pressure</p>
+                                <p id="pressure" class="value"></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-water"></i>
+                            <div>
+                                <p class="label">Feels Like</p>
+                                <p id="feelsLike" class="value"></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-cloud"></i>
+                            <div>
+                                <p class="label">Cloudiness</p>
+                                <p id="cloudiness" class="value"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast Section -->
+            <section id="forecastSection" class="forecast-section hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container"></div>
+            </section>
+
+            <!-- Welcome Section -->
+            <div id="welcomeSection" class="welcome-section">
+                <div class="welcome-card">
+                    <h2>Welcome to WeatherNow</h2>
+                    <p>Search for a city or use your current location to get started with real-time weather forecasts.</p>
+                    <div class="welcome-features">
+                        <div class="feature">
+                            <i class="fas fa-location-dot"></i>
+                            <h4>Current Weather</h4>
+                            <p>Get real-time temperature, humidity, wind speed and more</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>5-Day Forecast</h4>
+                            <p>Plan ahead with our detailed 5-day weather forecast</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-globe"></i>
+                            <h4>Global Coverage</h4>
+                            <p>Access weather data for any city worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 WeatherNow. Powered by OpenWeatherMap API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
